@@ -1,4 +1,11 @@
 function love.load()
+  -- Add classic library by rxi, a tiny class module
+  Object = require "classic"
+
+  require "cloud"
+
+  cloud = Cloud()
+
   -- Create basket variable and set x to 0
   basket = {}
   basket.x = 10
@@ -9,15 +16,19 @@ end
 
 function love.update(dt)
 
+  cloud:update(dt)
   movingBasket(dt)
 
 end
 
 function love.draw()
+  cloud:draw()
+  
   love.graphics.rectangle("line", basket.x, 500, 100, 50)
 end
 
 function movingBasket(dt)
+
   -- Make basket move left to right
 
   -- Use dt to offset different computer framerate
