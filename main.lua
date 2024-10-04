@@ -1,4 +1,7 @@
 function love.load()
+  -- Add classic library by rxi, a tiny class module
+  Object = require "classic"
+
   -- Create basket variable and set x to 0
   basket = {}
   basket.x = 10
