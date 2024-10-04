@@ -16,6 +16,7 @@ end
 
 function love.update(dt)
 
+  cloud:update(dt)
   movingBasket(dt)
 
 end
