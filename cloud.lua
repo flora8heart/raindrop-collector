@@ -17,6 +17,7 @@ function Cloud:update(dt)
   -- print("self.x = ", self.x)
 
   -- Prevent edge of window collision
+  -- Get window width
   local window_width = love.graphics.getWidth()
 
   -- Prevent collision to left of window
