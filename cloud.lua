@@ -1,6 +1,8 @@
 Cloud = Object:extend()
 
 local scale = 0.3
+local interval = 0.6
+local timer = 0
 
 function Cloud:new(x , y)
   self.image = love.graphics.newImage("img/cloud.png")
@@ -31,17 +33,22 @@ function Cloud:update(dt)
     -- go opposite direction after hitting the edge of window
     self.speed = -self.speed
   end
+
+  -- Add raindrops to listOfRaindrops after a certain intervals
+
+  -- Update the timer to calculate how much time has passed
+  timer = timer + dt
+
+  -- When timer exceeds the set interval
+  if timer > interval then
+    -- reset timer back to 0
+    timer = timer - interval
+    -- Add raindrops to listOfRaindrops. The position of Cloud is passed into raindrop.
+    table.insert(listOfRaindrops, Raindrop(self.x, self.y))
+  end
 end
 
 function Cloud:draw()
   -- love.graphics.draw( image, x, y , rotation, xScale , yScale)
   love.graphics.draw(self.image, self.x, self.y, 0, scale, scale)
-end
-
-function Cloud:keypressed(key)
-  -- if "return" or "space" key is pressed, add raindrops to listOfRaindrops table
-  if key == "return" or key == "space" then
-    -- The position of Cloud is passed into raindrop
-    table.insert(listOfRaindrops, Raindrop(self.x, self.y))
-  end
 end

@@ -33,7 +33,3 @@ function love.draw()
   end
   
 end
-
-function love.keypressed(key)
-  cloud:keypressed(key)
-end
