@@ -4,17 +4,16 @@ function love.load()
 
   require "cloud"
   require "basket"
+  require "raindrop"
 
   cloud = Cloud()
   basket = Basket()
-
+  listOfRaindrops = {}
 end
 
 function love.update(dt)
-
   cloud:update(dt)
   basket:update(dt)
-
 end
 
 function love.draw()
