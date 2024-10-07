@@ -2,7 +2,7 @@ Cloud = Object:extend()
 
 local scale = 0.3
 
-function Cloud:new()
+function Cloud:new(x , y)
   self.image = love.graphics.newImage("img/cloud.png")
   self.x = 20
   self.y = 20
@@ -33,8 +33,15 @@ function Cloud:update(dt)
   end
 end
 
-
 function Cloud:draw()
   -- love.graphics.draw( image, x, y , rotation, xScale , yScale)
   love.graphics.draw(self.image, self.x, self.y, 0, scale, scale)
+end
+
+function Cloud:keypressed(key)
+  -- if "return" or "space" key is pressed, add raindrops to listOfRaindrops table
+  if key == "return" or key == "space" then
+    -- The position of Cloud is passed into raindrop
+    table.insert(listOfRaindrops, Raindrop(self.x, self.y))
+  end
 end
