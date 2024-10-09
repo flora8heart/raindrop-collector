@@ -20,6 +20,9 @@ function love.update(dt)
   for i, v in ipairs(listOfRaindrops) do
     -- print("v", v)
     v:update(dt)
+
+    -- Check collision of raindrop with basket
+    v:checkCollision(basket)
   end
 end
 
