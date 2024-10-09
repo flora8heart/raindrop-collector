@@ -23,6 +23,12 @@ function love.update(dt)
 
     -- Check collision of raindrop with basket
     v:checkCollision(basket)
+
+    -- if collision is detected then remove raindrop
+    if v.collision then
+      print("remove raindrop!")
+      table.remove(listOfRaindrops, i)
+    end
   end
 end
 

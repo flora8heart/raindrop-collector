@@ -37,11 +37,17 @@ end
 
 function Raindrop:checkCollision(basket)
   -- print("Test checkCollision function!")
+  local x1, y1, w1, h1 = self.x, self.y, self.width, self.height
+  local x2, y2, w2, h2 = basket.x, basket.y, basket.width, basket.height
+  print("Raindrop x, y, w, h:", x1, y1, w1, h1)
+  print("Basket x, y, w, h:", x2, y2, w2, h2)
   if self.x + self.width > basket.width and
      self.x < basket.width + basket.width and
      self.y + self.height > basket.y and
      self.y < basket.y + basket.height then
       self.collision = true
       print("Collision!!!!")
+  else
+      self.collision = false
   end
 end
