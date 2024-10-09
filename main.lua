@@ -10,6 +10,12 @@ function love.load()
   basket = Basket()
   -- Tablet storing raindrops drawn
   listOfRaindrops = {}
+  -- Score counter
+  score = 0
+
+  -- set font size
+  font = love.graphics.newFont(20)
+  love.graphics.setFont(font)
 end
 
 function love.update(dt)
@@ -28,6 +34,9 @@ function love.update(dt)
     if v.collision then
       -- print("remove raindrop!")
       table.remove(listOfRaindrops, i)
+      -- Update score counter
+      score = score + 1
+      print("score", score)
     end
   end
 end
@@ -40,5 +49,8 @@ function love.draw()
   for i, v in ipairs(listOfRaindrops) do
     v:draw()
   end
+
+  -- Display score counter
+  love.graphics.print("Score: "..score, 10, 10)
   
 end
