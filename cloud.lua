@@ -1,8 +1,13 @@
 Cloud = Object:extend()
 
+-- Set scale of cloud image
 local scale = 0.3
+-- After setInterval time has passed, trigger the raindrop event
+local setInterval = 0.6
+-- Get initialTime before setInterval time has passed
+local initialTime = love.timer.getTime( )
 
-function Cloud:new()
+function Cloud:new(x , y)
   self.image = love.graphics.newImage("img/cloud.png")
   self.x = 20
   self.y = 20
@@ -31,8 +36,17 @@ function Cloud:update(dt)
     -- go opposite direction after hitting the edge of window
     self.speed = -self.speed
   end
-end
 
+  -- Get current time 
+  local currentTime = love.timer.getTime( )
+
+  -- After setInterval time has passed, trigger the event of adding raindrop to listofRaindrops
+  if currentTime - initialTime > setInterval then
+    -- Add raindrops to listOfRaindrops. The position of Cloud is passed into raindrop.
+    table.insert(listOfRaindrops, Raindrop(self.x, self.y))
+    initialTime = love.timer.getTime( )
+  end
+end
 
 function Cloud:draw()
   -- love.graphics.draw( image, x, y , rotation, xScale , yScale)

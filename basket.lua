@@ -40,7 +40,6 @@ function Basket:update(dt)
 end
 
 function Basket:draw()
-  -- love.graphics.rectangle("line", self.x, 500, 100, 50)
   -- love.graphics.draw( image, x, y , rotation, xScale , yScale
   love.graphics.draw(self.image, self.x, self.y, 0, scale, scale)
 end
