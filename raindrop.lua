@@ -46,7 +46,7 @@ function Raindrop:checkCollision(basket)
      y1 + h1 > y2 and
      y1 < y2 + h2 then
       self.collision = true
-      print("Collision!!!!")
+      -- print("Collision!!!!")
   else
       self.collision = false
   end

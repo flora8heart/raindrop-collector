@@ -26,7 +26,7 @@ function love.update(dt)
 
     -- if collision is detected then remove raindrop
     if v.collision then
-      print("remove raindrop!")
+      -- print("remove raindrop!")
       table.remove(listOfRaindrops, i)
     end
   end
