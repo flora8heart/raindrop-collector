@@ -16,6 +16,9 @@ function love.load()
   -- set font size
   font = love.graphics.newFont(20)
   love.graphics.setFont(font)
+
+  -- set background
+  love.graphics.setBackgroundColor(240/255, 248/255, 255/255)
 end
 
 function love.update(dt)
