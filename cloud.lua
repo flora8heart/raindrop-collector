@@ -30,7 +30,7 @@ function Cloud:update(dt, score)
       self.speed = self.speed - speedIncreaseAmount
     end
 
-    print("self.speed", self.speed)
+    print("cloud self.speed", self.speed)
     self.previousScore = score
   end
 
