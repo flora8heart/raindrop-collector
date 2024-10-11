@@ -13,6 +13,9 @@ function love.load()
   -- Score counter
   score = 0
 
+  -- Store how many raindrop has been missed
+  missedRaindropCounter = 0
+
   -- set font size
   font = love.graphics.newFont(20)
   love.graphics.setFont(font)
@@ -41,6 +44,11 @@ function love.update(dt)
       score = score + 1
       print("score", score)
     end
+
+    -- remove raindrop from screen if exceeds screen
+    if v.missed then
+      table.remove(listOfRaindrops, i)
+    end
   end
 end
 
@@ -56,6 +64,7 @@ function love.draw()
   -- Display score counter
   love.graphics.setColor(25/255,25/255,112/255) -- set font color to midnight blue, divded by 255 for rgb to love2d color code conversion as it's now between 1 and 0
   love.graphics.print("Score: "..score, 10, 10)
+  love.graphics.print("Missed: "..missedRaindropCounter, 680, 10)
   
   -- Reset color to white for the rest of the elements
   love.graphics.setColor(1, 1, 1)
