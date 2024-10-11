@@ -1,6 +1,6 @@
 function love.load()
   -- Add classic library by rxi, a tiny class module
-  Object = require "classic"
+  Object = require "classicExtra"
 
   require "cloud"
   require "basket"
@@ -23,7 +23,7 @@ end
 
 function love.update(dt)
   cloud:update(dt, score) -- passing score into cloud:update() to change cloud speed according to certain conditions
-  basket:update(dt)
+  basket:update(dt, score)
 
   -- iterate through listOfRaindrops and update raindrop in listOfRaindrops
   for i, v in ipairs(listOfRaindrops) do
