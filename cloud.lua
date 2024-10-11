@@ -7,16 +7,21 @@ local setInterval = 0.6
 -- Get initialTime before setInterval time has passed
 local initialTime = love.timer.getTime( )
 
-function Cloud:new(x , y)
+function Cloud:new()
   self.image = love.graphics.newImage("img/cloud.png")
   self.x = 20
   self.y = 20
   self.speed = 100
   self.width = (self.image:getWidth()) * scale -- remember to multiple by the scale value to get the new width value
   self.height = (self.image:getHeight()) * scale
+  self.__objectName = "Cloud" --for print debugging
 end
 
-function Cloud:update(dt)
+function Cloud:update(dt, score)
+  -- Increase cloud speed after a certain amount of score
+  -- increaseSpeed(score, scoreThreshold, speedIncreaseAmount)
+  self:increaseSpeed(score, 5, 100)
+
   -- Add movement to cloud
   self.x = self.x + self.speed * dt
   -- print("self.x = ", self.x)

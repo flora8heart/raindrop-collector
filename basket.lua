@@ -13,9 +13,13 @@ function Basket:new()
   self.max = love.graphics.getWidth() - self.min
   self.width = (self.image:getWidth()) * scale -- remember to multiple by the scale value to get the new width value
   self.height = (self.image:getHeight()) * scale
+  -- self.previousScore = 0
+  self.__objectName = "Basket" --for print debugging
 end
 
-function Basket:update(dt)
+function Basket:update(dt, score)
+  self:increaseSpeed(score, 8, 200)
+
   -- Add controls to basket
   -- Use dt to offset different computer framerate
   if love.keyboard.isDown("right", "d") then

@@ -1,6 +1,6 @@
 function love.load()
   -- Add classic library by rxi, a tiny class module
-  Object = require "classic"
+  Object = require "classicExtra"
 
   require "cloud"
   require "basket"
@@ -22,8 +22,8 @@ function love.load()
 end
 
 function love.update(dt)
-  cloud:update(dt)
-  basket:update(dt)
+  cloud:update(dt, score) -- passing score into cloud:update() to change cloud speed according to certain conditions
+  basket:update(dt, score)
 
   -- iterate through listOfRaindrops and update raindrop in listOfRaindrops
   for i, v in ipairs(listOfRaindrops) do
@@ -54,7 +54,7 @@ function love.draw()
   end
 
   -- Display score counter
-  love.graphics.setColor(217/255,155/255,130/255) -- set font color to salmon pink, divded by 255 for rgb to love2d color code conversion as it's now between 1 and 0
+  love.graphics.setColor(25/255,25/255,112/255) -- set font color to midnight blue, divded by 255 for rgb to love2d color code conversion as it's now between 1 and 0
   love.graphics.print("Score: "..score, 10, 10)
   
   -- Reset color to white for the rest of the elements
