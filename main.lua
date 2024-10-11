@@ -54,7 +54,7 @@ function love.draw()
   end
 
   -- Display score counter
-  love.graphics.setColor(217/255,155/255,130/255) -- set font color to salmon pink, divded by 255 for rgb to love2d color code conversion as it's now between 1 and 0
+  love.graphics.setColor(25/255,25/255,112/255) -- set font color to midnight blue, divded by 255 for rgb to love2d color code conversion as it's now between 1 and 0
   love.graphics.print("Score: "..score, 10, 10)
   
   -- Reset color to white for the rest of the elements
