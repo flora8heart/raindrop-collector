@@ -22,7 +22,7 @@ function love.load()
 end
 
 function love.update(dt)
-  cloud:update(dt)
+  cloud:update(dt, score) -- passing score into cloud:update() to change cloud speed according to certain conditions
   basket:update(dt)
 
   -- iterate through listOfRaindrops and update raindrop in listOfRaindrops

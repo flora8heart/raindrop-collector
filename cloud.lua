@@ -14,9 +14,26 @@ function Cloud:new()
   self.speed = 100
   self.width = (self.image:getWidth()) * scale -- remember to multiple by the scale value to get the new width value
   self.height = (self.image:getHeight()) * scale
+  -- Initialitse a variable to store previous score and set it a a property of self object so that its value is retained across function calls
+  self.previousScore = 0
 end
 
-function Cloud:update(dt)
+function Cloud:update(dt, score)
+  -- Increase cloud speed after a certain amount of score
+  local scoreThreshold = 5
+  local speedIncreaseAmount = 100
+
+  if score - self.previousScore >= scoreThreshold then
+    if self.speed > 0 then
+      self.speed = self.speed + speedIncreaseAmount
+    elseif self.speed < 0 then
+      self.speed = self.speed - speedIncreaseAmount
+    end
+
+    print("self.speed", self.speed)
+    self.previousScore = score
+  end
+
   -- Add movement to cloud
   self.x = self.x + self.speed * dt
   -- print("self.x = ", self.x)
