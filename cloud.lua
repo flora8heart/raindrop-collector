@@ -7,7 +7,7 @@ local setInterval = 0.6
 -- Get initialTime before setInterval time has passed
 local initialTime = love.timer.getTime( )
 
-function Cloud:new(x , y)
+function Cloud:new()
   self.image = love.graphics.newImage("img/cloud.png")
   self.x = 20
   self.y = 20
