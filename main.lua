@@ -3,6 +3,8 @@ local score = 0 -- score counter
 local sounds = {}
 local cloud, basket
 local gameState = "intro" -- Set initial game state
+-- Set the threshold of raindrops that missed the basket, which will then be used to trigger a game reset or game over.
+local missedBasketThreshold = 5
 
 function love.load()
   -- Add classic library by rxi, a tiny class module
@@ -89,10 +91,6 @@ function love.update(dt)
     end
   end
 
-
-  -- Set the threshold of raindrops that missed the basket, which will then be used to trigger a game reset or game over.
-  local missedBasketThreshold = 5
-
   -- Reload game after 5 raindrops are missed.
   if missedRaindropCounter > missedBasketThreshold then
     gameState = "gameover"
@@ -146,5 +144,20 @@ function love.draw()
     -- Reset color to white for the rest of the elements
     love.graphics.setColor(1, 1, 1)
 
+  end
+
+  -- else if gameStat is game over then draw game over screen
+  if gameState == "gameover" then
+    love.graphics.setColor(25/255,25/255,112/255)
+    local width = love.graphics.getWidth()
+    local height = love.graphics.getHeight()
+
+    love.graphics.setFont(titleFont)
+    love.graphics.printf("Game Over!", 0, 150, width, "center")
+    love.graphics.setFont(introFont)
+    
+    -- local gameoverText = "You've missed " .. (missedBasketThreshold + 1) .. " raindrops\nYour Score is " .. score .. "\nPress Enter or Space to Restart\n Or Press Esc or Q to Main Screen"
+    local gameoverText = "Your Score is " .. score .. "\n\nPress Enter or Space to restart game"
+    love.graphics.printf(gameoverText, 0, height/2, width, "center")
   end
 end
