@@ -83,8 +83,11 @@ function love.draw()
   -- Reset color to white for the rest of the elements
   love.graphics.setColor(1, 1, 1)
 
+  -- Set the threshold of raindrops that missed the basket, which will then be used to trigger a game reset or game over.
+  local missedBasketThreshold = 5
+
   -- Reload game after 5 raindrops are missed.
-  if missedRaindropCounter > 5 then
+  if missedRaindropCounter > missedBasketThreshold then
     sounds.music:stop() -- stop playing music when game over
     love.load()
   end

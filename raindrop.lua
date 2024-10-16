@@ -2,9 +2,6 @@ Raindrop = Object:extend()
 
 local scale = 0.04
 
--- Set the threshold of raindrops that missed the basket, which will then be used to trigger a game reset or game over.
-local missedBasketThreshold = 10
-
 function Raindrop:new(x, y)
   self.image = love.graphics.newImage("img/rain-drop.png")
   self.x = x + 50 --70
