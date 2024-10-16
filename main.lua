@@ -19,8 +19,6 @@ function love.load()
   basket = Basket()
   -- Tablet storing raindrops drawn
   listOfRaindrops = {}
-  -- -- Score counter
-  -- score = 0
 
   -- Store how many raindrop has been missed
   missedRaindropCounter = 0
