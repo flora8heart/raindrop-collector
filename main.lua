@@ -73,6 +73,16 @@ function love.update(dt)
       end
     end
   end
+
+  -- Set the threshold of raindrops that missed the basket, which will then be used to trigger a game reset or game over.
+  local missedBasketThreshold = 5
+
+  -- Reload game after 5 raindrops are missed.
+  if missedRaindropCounter > missedBasketThreshold then
+    sounds.music:stop() -- stop playing music when game over
+    love.load()
+    score = 0
+  end
 end
 
 function love.draw()
@@ -102,7 +112,7 @@ function love.draw()
     local basketArtHeight = basketArt:getHeight() * scale
     local basketArtWidth = basketArt:getWidth() * scale
     love.graphics.draw(basketArt, width / 2 - basketArtWidth / 2, height - basketArtHeight - 20, 0, scale, scale)
-    
+
   -- else if gameState is playing then draw playing screen
   elseif gameState == "playing" then
     cloud:draw()
@@ -122,13 +132,5 @@ function love.draw()
     -- Reset color to white for the rest of the elements
     love.graphics.setColor(1, 1, 1)
 
-    -- Set the threshold of raindrops that missed the basket, which will then be used to trigger a game reset or game over.
-    local missedBasketThreshold = 5
-
-    -- Reload game after 5 raindrops are missed.
-    if missedRaindropCounter > missedBasketThreshold then
-      sounds.music:stop() -- stop playing music when game over
-      love.load()
-    end
   end
 end
