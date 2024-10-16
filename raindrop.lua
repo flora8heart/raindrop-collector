@@ -31,6 +31,7 @@ function Raindrop:draw()
 
   -- Reload game after 5 raindrops are missed.
   if missedRaindropCounter > 5 then
+    sounds.music:stop() -- stop playing music when game over
     love.load()
   end
 end
