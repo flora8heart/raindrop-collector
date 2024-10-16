@@ -2,9 +2,6 @@ Raindrop = Object:extend()
 
 local scale = 0.04
 
--- Set the threshold of raindrops that missed the basket, which will then be used to trigger a game reset or game over.
-local missedBasketThreshold = 10
-
 function Raindrop:new(x, y)
   self.image = love.graphics.newImage("img/rain-drop.png")
   self.x = x + 50 --70
@@ -28,12 +25,6 @@ end
 
 function Raindrop:draw()
   love.graphics.draw(self.image, self.x, self.y, 0, scale, scale)
-
-  -- Reload game after 5 raindrops are missed.
-  if missedRaindropCounter > 5 then
-    sounds.music:stop() -- stop playing music when game over
-    love.load()
-  end
 end
 
 -- Check collision using the AABB method (Axis-Aligned Bounding Box) 
@@ -66,6 +57,4 @@ function Raindrop:checkCollision(basket)
   else
       self.collision = false
   end
-
-  
 end

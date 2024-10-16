@@ -1,4 +1,4 @@
-Basket = Object:extend()
+local Basket = Object:extend()
 
 local scale = 0.25
 
@@ -47,3 +47,5 @@ function Basket:draw()
   -- love.graphics.draw( image, x, y , rotation, xScale , yScale
   love.graphics.draw(self.image, self.x, self.y, 0, scale, scale)
 end
+
+return Basket
