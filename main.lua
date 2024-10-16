@@ -1,5 +1,6 @@
 -- Set up global variables within the scope of the game files.
 local score = 0 -- score counter
+local sounds = {}
 
 function love.load()
   -- Add classic library by rxi, a tiny class module
@@ -8,7 +9,7 @@ function love.load()
   require "cloud"
   require "basket"
   require "raindrop"
-  sounds = {}
+  
   sounds.raindrop = love.audio.newSource("sound/collision.wav", "static")
   sounds.music = love.audio.newSource("sound/rainfall.wav", "stream")
   sounds.music:setLooping(true) -- set background music to true
