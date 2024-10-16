@@ -35,6 +35,7 @@ function love.load()
 
   -- set font size for intro
   introFont = love.graphics.newFont(40)
+  titleFont = love.graphics.newFont(60)
 
 end
 
@@ -75,29 +76,59 @@ function love.update(dt)
 end
 
 function love.draw()
-  cloud:draw()
-  basket:draw()
+  -- If gameState is intro then draw intro splash screen
+  if gameState == "intro" then
+    
+    love.graphics.setColor(25/255,25/255,112/255)
+    local width = love.graphics.getWidth()
+    local height = love.graphics.getHeight()
 
-  -- iterate through listOfRaindrops and draw the raindrops that was added to listOfRaindrops
-  for i, v in ipairs(listOfRaindrops) do
-    v:draw()
-  end
+    -- Draw game title
+    love.graphics.setFont(titleFont)
+    local gameTitle = "Raindrop Collector"
+    love.graphics.printf(gameTitle, 0, 100, width, "center")
 
-  -- Display score counter
-  love.graphics.setFont(scoreFont)
-  love.graphics.setColor(25/255,25/255,112/255) -- set font color to midnight blue, divded by 255 for rgb to love2d color code conversion as it's now between 1 and 0
-  love.graphics.print("Score: "..score, 10, 10)
-  love.graphics.print("Missed: "..missedRaindropCounter, 680, 10)
+    --Draw game instruction
+    love.graphics.setFont(introFont)
+    local gameInstruction = "Press Enter or Space to Start"
+    love.graphics.printf(gameInstruction, 0, height / 2, width, "center")
+
+    love.graphics.setColor(1, 1, 1) -- Reset color to white
   
-  -- Reset color to white for the rest of the elements
-  love.graphics.setColor(1, 1, 1)
+    -- Draw basket for intro
+    local scale = 0.3
+    local basketArt = love.graphics.newImage("img/basket.png")
+    -- love.graphics.draw( image, x, y , rotation, xScale , yScale
+    local basketArtHeight = basketArt:getHeight() * scale
+    local basketArtWidth = basketArt:getWidth() * scale
+    love.graphics.draw(basketArt, width / 2 - basketArtWidth / 2, height - basketArtHeight - 20, 0, scale, scale)
+    
+  -- else if gameState is playing then draw playing screen
+  elseif gameState == "playing" then
+    cloud:draw()
+    basket:draw()
 
-  -- Set the threshold of raindrops that missed the basket, which will then be used to trigger a game reset or game over.
-  local missedBasketThreshold = 5
+    -- iterate through listOfRaindrops and draw the raindrops that was added to listOfRaindrops
+    for i, v in ipairs(listOfRaindrops) do
+      v:draw()
+    end
 
-  -- Reload game after 5 raindrops are missed.
-  if missedRaindropCounter > missedBasketThreshold then
-    sounds.music:stop() -- stop playing music when game over
-    love.load()
+    -- Display score counter
+    love.graphics.setFont(scoreFont)
+    love.graphics.setColor(25/255,25/255,112/255) -- set font color to midnight blue, divded by 255 for rgb to love2d color code conversion as it's now between 1 and 0
+    love.graphics.print("Score: "..score, 10, 10)
+    love.graphics.print("Missed: "..missedRaindropCounter, 680, 10)
+    
+    -- Reset color to white for the rest of the elements
+    love.graphics.setColor(1, 1, 1)
+
+    -- Set the threshold of raindrops that missed the basket, which will then be used to trigger a game reset or game over.
+    local missedBasketThreshold = 5
+
+    -- Reload game after 5 raindrops are missed.
+    if missedRaindropCounter > missedBasketThreshold then
+      sounds.music:stop() -- stop playing music when game over
+      love.load()
+    end
   end
 end
