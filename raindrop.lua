@@ -28,12 +28,6 @@ end
 
 function Raindrop:draw()
   love.graphics.draw(self.image, self.x, self.y, 0, scale, scale)
-
-  -- Reload game after 5 raindrops are missed.
-  if missedRaindropCounter > 5 then
-    sounds.music:stop() -- stop playing music when game over
-    love.load()
-  end
 end
 
 -- Check collision using the AABB method (Axis-Aligned Bounding Box) 
@@ -66,6 +60,4 @@ function Raindrop:checkCollision(basket)
   else
       self.collision = false
   end
-
-  
 end

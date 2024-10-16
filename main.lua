@@ -1,13 +1,14 @@
 -- Set up global variables within the scope of the game files.
 local score = 0 -- score counter
 local sounds = {}
+local cloud, basket
 
 function love.load()
   -- Add classic library by rxi, a tiny class module
   Object = require "classicExtra"
 
-  require "cloud"
-  require "basket"
+  local Cloud = require "cloud"
+  local Basket = require "basket"
   require "raindrop"
   
   sounds.raindrop = love.audio.newSource("sound/collision.wav", "static")
@@ -81,4 +82,10 @@ function love.draw()
   
   -- Reset color to white for the rest of the elements
   love.graphics.setColor(1, 1, 1)
+
+  -- Reload game after 5 raindrops are missed.
+  if missedRaindropCounter > 5 then
+    sounds.music:stop() -- stop playing music when game over
+    love.load()
+  end
 end

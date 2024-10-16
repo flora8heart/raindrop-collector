@@ -1,4 +1,4 @@
-Cloud = Object:extend()
+local Cloud = Object:extend()
 
 -- Set scale of cloud image
 local scale = 0.3
@@ -57,3 +57,5 @@ function Cloud:draw()
   -- love.graphics.draw( image, x, y , rotation, xScale , yScale)
   love.graphics.draw(self.image, self.x, self.y, 0, scale, scale)
 end
+
+return Cloud
