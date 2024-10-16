@@ -2,6 +2,7 @@
 local score = 0 -- score counter
 local sounds = {}
 local cloud, basket
+local gameState = "intro" -- Set initial game state
 
 function love.load()
   -- Add classic library by rxi, a tiny class module
@@ -23,15 +24,17 @@ function love.load()
   -- Store how many raindrop has been missed
   missedRaindropCounter = 0
 
-  -- set font size
-  font = love.graphics.newFont(20)
-  love.graphics.setFont(font)
+  -- set font size for score
+  scoreFont = love.graphics.newFont(20)
 
   -- set background
   love.graphics.setBackgroundColor(240/255, 248/255, 255/255)
 
   -- Plays blackground music
   sounds.music:play()
+
+  -- set font size for intro
+  introFont = love.graphics.newFont(40)
 
 end
 
@@ -74,6 +77,7 @@ function love.draw()
   end
 
   -- Display score counter
+  love.graphics.setFont(scoreFont)
   love.graphics.setColor(25/255,25/255,112/255) -- set font color to midnight blue, divded by 255 for rgb to love2d color code conversion as it's now between 1 and 0
   love.graphics.print("Score: "..score, 10, 10)
   love.graphics.print("Missed: "..missedRaindropCounter, 680, 10)
