@@ -5,6 +5,10 @@ function love.load()
   require "cloud"
   require "basket"
   require "raindrop"
+  sounds = {}
+  sounds.raindrop = love.audio.newSource("sound/collision.wav", "static")
+  sounds.music = love.audio.newSource("sound/rainfall.wav", "stream")
+  sounds.music:setLooping(true) -- set background music to true
 
   cloud = Cloud()
   basket = Basket()
@@ -22,6 +26,10 @@ function love.load()
 
   -- set background
   love.graphics.setBackgroundColor(240/255, 248/255, 255/255)
+
+  -- Plays blackground music
+  sounds.music:play()
+
 end
 
 function love.update(dt)
@@ -38,6 +46,7 @@ function love.update(dt)
 
     -- if collision is detected then remove raindrop
     if v.collision then
+      sounds.raindrop:play()
       -- print("remove raindrop!")
       table.remove(listOfRaindrops, i)
       -- Update score counter
