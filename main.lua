@@ -1,3 +1,6 @@
+-- Set up global variables within the scope of the game files.
+local score = 0 -- score counter
+
 function love.load()
   -- Add classic library by rxi, a tiny class module
   Object = require "classicExtra"
@@ -14,8 +17,8 @@ function love.load()
   basket = Basket()
   -- Tablet storing raindrops drawn
   listOfRaindrops = {}
-  -- Score counter
-  score = 0
+  -- -- Score counter
+  -- score = 0
 
   -- Store how many raindrop has been missed
   missedRaindropCounter = 0
