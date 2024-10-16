@@ -72,16 +72,30 @@ function love.update(dt)
         table.remove(listOfRaindrops, i)
       end
     end
+  elseif gameState == "gameover" then
+    -- option 1 restart game
+    if love.keyboard.isDown("return", "space") then
+      gameState = "playing"
+      sounds.music:stop() -- stop playing music when game over
+      love.load() -- reloads variables
+      score = 0 -- reset score to 0
+    end
+    --option 2 go to intro screen
+    if love.keyboard.isDown("q", "escape") then
+      gameState = "intro"
+      sounds.music:stop() -- stop playing music when game over
+      love.load() -- reloads variables
+      score = 0 -- reset score to 0
+    end
   end
+
 
   -- Set the threshold of raindrops that missed the basket, which will then be used to trigger a game reset or game over.
   local missedBasketThreshold = 5
 
   -- Reload game after 5 raindrops are missed.
   if missedRaindropCounter > missedBasketThreshold then
-    sounds.music:stop() -- stop playing music when game over
-    love.load()
-    score = 0
+    gameState = "gameover"
   end
 end
 
