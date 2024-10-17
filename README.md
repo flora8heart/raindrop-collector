@@ -21,8 +21,6 @@ Raindrop collector is a game written in Lua using the Love2D framework.
 - Download or clone this repo and drag the folder to the LÖVE application shortcut
 - Or download the **RaindropCollector.love** file from the latest release [here](https://github.com/flora8heart/raindrop-collector/releases/tag/v.1.0.0). Double click on the `.love` file to run it.
 
-3. test
-
 ## Usage
 
 1. On the intro screen, press `Return` or `Space` to start the game.
