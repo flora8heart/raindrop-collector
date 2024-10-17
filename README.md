@@ -33,8 +33,8 @@ Raindrop collector is a game written in Lua using the Love2D framework.
 - The cloud movement speed increases every time after 10 raindrops has been collected.
 - The basket movement speed increases accordingly as the game increases in difficulty as cloud movement speed increass.
 
-## Source Files
+<!-- ## Source Files -->
 
-## Future work
+<!-- ## Future work -->
 
-## Acknowledgements
+<!-- ## Acknowledgements -->
