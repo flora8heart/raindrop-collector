@@ -31,14 +31,19 @@ Raindrop collector is a game written in Lua using the Love2D framework.
 ## Demo
 
 **Intro Screen**
+<br>
 <img src="img/intro-screen.png" align="center" width="500">
 <br>
 
 **Playing Screen**
+<br>
 <img src="img/playing-screen.png" align="center" width="500">
+<br>
 
 **Game Over Screen**
+<br>
 <img src="img/gameover-screen.png" align="center" width="500">
+<br>
 
 ## Game logic
 
