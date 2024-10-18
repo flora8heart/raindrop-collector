@@ -5,7 +5,7 @@
 
 Raindrop collector is a game written in Lua using the Love2D framework.
 
-## Tablet of Content
+## Table of Content
 
 - [How to run the game](#how-to-run-the-game)
 - [Usage](#usage)
@@ -27,6 +27,18 @@ Raindrop collector is a game written in Lua using the Love2D framework.
 2. Use the `left`/`a` and `right`/`d` keys to collect the raindrops
 3. After more than _5 raindrops_ is missed, the game ends.
 4. Press `Return` or `Space` to restart the game; or `Q` or `esc` key to exit to intro screen.
+
+## Demo
+
+**Intro Screen**
+<img src="img/intro-screen.png" align="center" width="500">
+<br>
+
+**Playing Screen**
+<img src="img/playing-screen.png" align="center" width="500">
+
+**Game Over Screen**
+<img src="img/gameover-screen.png" align="center" width="500">
 
 ## Game logic
 
