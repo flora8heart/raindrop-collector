@@ -3,7 +3,7 @@
 [![Lua](https://img.shields.io/badge/-Lua-2C2D72?logo=lua&logoColor=ffffff)]()
 [![Love2D](https://img.shields.io/badge/-Love2D-EF223A?logo=heart&logoColor=ffffff)]()
 
-Raindrop collector is a game written in Lua using the Love2D framework. In this game user will be controlling the basket by moving it across the screen left and right to collect the raindrops.
+Raindrop collector is a game written in Lua using the Love2D framework. In this game, the player will be controlling the basket by moving it across the screen left and right to collect the raindrops.
 
 ## Table of Content
 
@@ -51,9 +51,25 @@ Download LÖVE from [here](https://love2d.org/)
 
 ## Game Mechanics
 
-- The game increases in difficulty as more raindrops are collected. The game ends when 6 raindrops has been missed.
-- The cloud movement speed increases after every 10 raindrops has been collected.
-- The basket movement speed increases as the game increases in difficulty as cloud movement speed increases.
+**Scoring**
+
+A score of 1 is awarded for each raindrop collected.
+
+**Game Over Conditions**
+
+The player loses if they miss more than 5 raindrops where the game end when a total of 6 raindrops has been missed either consecutively or cumulatively.
+
+**Difficulty Progression**
+
+The game increases in difficulty as more raindrops are collected.
+
+**Cloud Movement Speed**
+
+The cloud movement speed increases after every 10 raindrops has been collected.
+
+**Basket Movement Speed**
+
+The basket movement speed also increases as the game increases in difficulty to align with the increasing cloud movement speed.
 
 <!-- ## Source Files -->
 
@@ -62,4 +78,4 @@ Download LÖVE from [here](https://love2d.org/)
 - Add varied facial reactions to the basket.
 - Add leadership board
 
-<!-- ## Acknowledgements -->
+<!-- ## Credits and Acknowledgements -->
