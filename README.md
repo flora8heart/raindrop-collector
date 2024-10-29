@@ -3,7 +3,7 @@
 [![Lua](https://img.shields.io/badge/-Lua-2C2D72?logo=lua&logoColor=ffffff)]()
 [![Love2D](https://img.shields.io/badge/-Love2D-EF223A?logo=heart&logoColor=ffffff)]()
 
-Raindrop collector is a game written in Lua using the Love2D framework.
+Raindrop collector is a game written in Lua using the Love2D framework. In this game user will be controlling the basket by moving it across the screen left and right to collect the raindrops.
 
 ## Table of Content
 
@@ -13,15 +13,19 @@ Raindrop collector is a game written in Lua using the Love2D framework.
 - [Source Files](#source-files)
 - [Acknowledgement](#acknowledgements)
 
+## Dependencies
+
+Download LÖVE from [here](https://love2d.org/)
+
 ## How to run the game
 
-1. Download LÖVE from [here](https://love2d.org/)
+1. If LÖVE is not installed, download LÖVE from [here](https://love2d.org/)
 2. Two ways to run the game:
 
 - Download or clone this repo and drag the folder to the LÖVE application shortcut
 - Or download the **RaindropCollector.love** file from the latest release [here](https://github.com/flora8heart/raindrop-collector/releases/tag/v.1.0.0). Double click on the `.love` file to run it.
 
-## Usage
+## Controls and Gameplay
 
 1. On the intro screen, press `Return` or `Space` to start the game.
 2. Use the `left`/`a` and `right`/`d` keys to collect the raindrops
@@ -45,13 +49,17 @@ Raindrop collector is a game written in Lua using the Love2D framework.
 <img src="img/gameover-screen.png" align="center" width="500">
 <br>
 
-## Game logic
+## Game Mechanics
 
-- The cloud movement speed increases every time after 10 raindrops has been collected.
-- The basket movement speed increases accordingly as the game increases in difficulty as cloud movement speed increass.
+- The game increases in difficulty as more raindrops are collected. The game ends when 6 raindrops has been missed.
+- The cloud movement speed increases after every 10 raindrops has been collected.
+- The basket movement speed increases as the game increases in difficulty as cloud movement speed increases.
 
 <!-- ## Source Files -->
 
-<!-- ## Future work -->
+## Future Work
+
+- Add varied facial reactions to the basket.
+- Add leadership board
 
 <!-- ## Acknowledgements -->
