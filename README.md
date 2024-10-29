@@ -99,7 +99,8 @@ This file contains the code for the raindrop object where it defines the behavio
 
 ## Ideas for future Work
 
-- Add varied facial reactions to the basket.
-- Add leadership board
+- **Add varied facial reactions to the basket**: Implement different facial expressions on the basket to reflect different game event, providing visual feedback for the players to enhance player engagement. For example, A happy face when a raindrop is collected and a sad face when a raindrop is missed.
+
+- **Add leaderboard feature**: Include a leaderboard feature to store and display the current high scores to increase replayability. This can motivate the player to beat their own high scores or compete against others. This can include options for both local or online leaderboards to keep track of player performance and cultivate competition.
 
 <!-- ## Credits and Acknowledgements -->
