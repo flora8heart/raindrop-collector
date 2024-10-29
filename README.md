@@ -7,11 +7,14 @@ Raindrop collector is a game written in Lua using the Love2D framework. In this 
 
 ## Table of Content
 
+- [Dependencies](#dependencies)
 - [How to run the game](#how-to-run-the-game)
-- [Usage](#usage)
-- [Game Logic](#game-logic)
+- [Controls and Gameplay](#controls-and-gameplay)
+- [Demo](#demo)
+- [Game Mechanics](#game-mechanics)
 - [Source Files](#source-files)
-- [Acknowledgement](#acknowledgements)
+- [Ideas for future work](#ideas-for-future-work)
+- [Credits and Acknowledgements](#credits-and-acknowledgements)
 
 ## Dependencies
 
@@ -99,7 +102,7 @@ This file contains the code for the basket object, including its movement and co
 
 This file contains the code for the raindrop object where it defines the behaviour and the properties of the raindrop object which include how it spawns, its movement and its interactions with the basket object.
 
-## Ideas for future Work
+## Ideas for future work
 
 - **Add varied facial reactions to the basket**: Implement different facial expressions on the basket to reflect different game event, providing visual feedback for the players to enhance player engagement. For example, A happy face when a raindrop is collected and a sad face when a raindrop is missed.
 
