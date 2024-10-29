@@ -31,7 +31,7 @@ Download LÖVE from [here](https://love2d.org/)
 ## Controls and Gameplay
 
 1. On the intro screen, press `Return` or `Space` to start the game.
-2. Use the `left`/`a` and `right`/`d` keys to collect the raindrops
+2. Use the `left`/`a` and `right`/`d` keys to control the basket collect the raindrops
 3. After more than _5 raindrops_ is missed, the game ends.
 4. Press `Return` or `Space` to restart the game; or `Q` or `esc` key to exit to intro screen.
 
