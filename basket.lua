@@ -18,6 +18,7 @@ function Basket:new()
 end
 
 function Basket:update(dt, score)
+  -- Increases basket speed after a certain amount of score
   self:increaseSpeed(score, 8, 200)
 
   -- Add controls to basket
