@@ -71,9 +71,33 @@ The cloud movement speed increases after every 10 raindrops has been collected.
 
 The basket movement speed also increases as the game increases in difficulty to align with the increasing cloud movement speed.
 
-<!-- ## Source Files -->
+## Source Files
 
-## Future Work
+**classic.lua**
+
+A third-party library created by [rxi](https://github.com/rxi/classic), a tiny class module for Lua which allows the creation of objects by facilitating object-oriented programming.
+
+**classicExtra.lua**
+
+An extension to the `classic.lua` module, to be used alongside it. This file an additional functionality which is the increase speed logic function. This separate module was created to ensure that the original `classic.lua` module is not modified.
+
+**main.lua**
+
+This is the main file of the game and is the entry point of the game. This initialises, updates and draw the current game state by handling the game loops and managing the overall flow of the game.
+
+**cloud.lua**
+
+This file contains the code for the cloud object which includes its initialisation conditions, movement logic and its interaction with other game element.
+
+**basket.lua**
+
+This file contains the code for the basket object, including its movement and collision detection with the raindrop object.
+
+**raindrop.lua**
+
+This file contains the code for the raindrop object where it defines the behaviour and the properties of the raindrop object which include how it spawns, its movement and its interactions with the basket object.
+
+## Ideas for future Work
 
 - Add varied facial reactions to the basket.
 - Add leadership board
