@@ -103,4 +103,24 @@ This file contains the code for the raindrop object where it defines the behavio
 
 - **Add leaderboard feature**: Include a leaderboard feature to store and display the current high scores to increase replayability. This can motivate the player to beat their own high scores or compete against others. This can include options for both local or online leaderboards to keep track of player performance and cultivate competition.
 
-<!-- ## Credits and Acknowledgements -->
+## Credits and Acknowledgements
+
+I would like to thank [sheepolution](https://sheepolution.com/learn) for providing simple and easy-to-understand tutorials on the usage of Love2D engine, which enabled me to create my first game.
+
+The following are the library, image and sound assets used in this game:
+
+**Library**
+
+- `Classic` library created by [rxi](https://github.com/rxi/classic)
+
+**Image assets**
+
+- **Basket**: [Picnic basket Kawaii Lineal color icon | Freepik](https://www.freepik.com/icon/picnic-basket_4646543)
+- **Raindrop**: [Water day Kawaii Lineal color icon | Freepik](https://www.freepik.com/icon/water-day_6696386#fromView=search&page=1&position=12&uuid=aff669b9-5e5b-49a3-be68-5da1ab480256)
+- **Cloud**: [Cloud Kawaii Lineal color icon | Freepik](https://www.freepik.com/icon/cloud_14036354#fromView=search&page=1&position=70&uuid=f91ecc6e-5eec-4aa7-87fb-fc8df2870af7)
+
+**Sound assets**
+
+- **Raindrop Sound**: [Drop - Water by mattfinarelli](https://freesound.org/people/mattfinarelli/sounds/533146/)
+- **Rainfall Sound**: [Rain Sound Effects | Mixkit](https://mixkit.co/free-sound-effects/rain/)
+- **Collision Sound**: Generated using a sound effect generator called [bfxr](http://www.bfxr.net/?s=2%2C0.22%2C%2C0.0563%2C0.5729%2C0.208%2C0.3%2C0.4827%2C%2C%2C%2C%2C%2C%2C%2C%2C%2C%2C%2C%2C%2C%2C%2C%2C%2C1%2C%2C%2C%2C%2C%2C%2CmasterVolume)
